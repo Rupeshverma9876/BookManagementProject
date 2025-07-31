@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+<!--    <style>-->
+<!--        .register-container {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--            height: 100vh;-->
+<!--        }-->
+
+<!--        .register-container{-->
+<!--            background-color: #fff;-->
+<!--            border-radius: 15px;-->
+<!--            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);-->
+<!--            padding: 20px;-->
+<!--            width: 700px;-->
+<!--        }-->
+
+<!--        .register-container h2 {-->
+<!--            color: #4caf50;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 5px;-->
+<!--            color: #555;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--&lt;!&ndash;        input[type="text"],&ndash;&gt;-->
+<!--&lt;!&ndash;        input[type="email"],&ndash;&gt;-->
+<!--&lt;!&ndash;        input[type="password"],&ndash;&gt;-->
+<!--&lt;!&ndash;        select {&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-bottom: 15px;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;            box-sizing: border-box;&ndash;&gt;-->
+<!--&lt;!&ndash;            border: 1px solid #ddd;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: 5px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--        button[type="submit"] {-->
+<!--            padding: 15px;-->
+<!--            border-radius: 10px;-->
+<!--            border: none;-->
+<!--            background-color: #4caf50;-->
+<!--            color: white;-->
+<!--            cursor: pointer;-->
+<!--            width: 100%;-->
+<!--            font-size: 16px;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<!--<h1 style="text-align: center">WELCOME TO BOOK STORE  </h1>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <a class="navbar-brand text-white" href="#">Book Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link active text-white" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="AvailableBook">Available Books</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="MyBook">My Books</a>
+            </li>
+
+        </ul>
+        <div>
+            <a class="nav-link active text-white" href="BookRegister">New Book Register</a>
+        </div>
+    </div>
+
+</nav>
+<h3 style = text-align:center>WELCOME PLEASE REGISTER THE BOOK  </h3>
+<div class="register-container my-5 p-5 mx-auto"
+     style="border: 7px solid black; border-radius: 4px; ">
+
+<form class  = "col-md-4 offset-md-4" th:action = "@{/save}" method = "post">
+    <div class="mb-3">
+        <label >Enter Name </label>
+        <input type="text" class = "form-control" name = "name">
+    </div>
+    <div class="mb-3">
+        <label >Enter Author Name </label>
+        <input type="text" class = "form-control" name = "author">
+    </div>
+    <div class="mb-3">
+        <label >Enter Price</label>
+        <input type="text" class = "form-control" name = "price">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<!--<div class="register-container ">-->
+<!--    <h1>PLEASE ENTER BOOK DETAILS </h1>-->
+<!--    <h2>Book Registration Form</h2>-->
+<!--    <form  th:action = "@{/save}" method = "post">-->
+<!--        <label >Enter Name:</label>-->
+<!--        <input type="text"  name="name" required />-->
+
+<!--        <label >Enter Author Name :</label>-->
+<!--        <input type="text"  name="author" required />-->
+
+<!--        <label > Enter price Details:</label>-->
+<!--        <input type="text"  name="price" required />-->
+
+
+<!--        <button type="submit">-->
+<!--            Submit-->
+<!--        </button>-->
+<!--    </form>-->
+<!--</div>-->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
